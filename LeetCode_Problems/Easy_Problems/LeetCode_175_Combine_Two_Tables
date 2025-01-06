@@ -1,0 +1,18 @@
+Qstn : Write a solution to report the first name, last name, city, and state of each person in the Person table. 
+       If the address of a personId is not present in the Address table, report null instead.
+       Return the result table in any order.
+
+Query : SELECT firstName,lastName,city,state FROM Person as p LEFT JOIN Address as a ON p.personId = a.PersonId 
+
+Reason : 
+-> We Want the **City and State** of the Each person present in the  **Person Table**
+-> If there is a Person Exist in the table **Person** whose state and city is not present in the 2nd Table 
+-> We will print null for that case.
+
+Explanation : 
+1. I Left Join "Person" Table with "Address" Table which Means, I Will Consider Each Record on the Left Table and Only those Record on Right Table whose PersonId from right table present in the Left table column PersonId.
+
+2. If a personId in the Left table is not present in the Right Table, Over all Result Will Display null in Right Table. 
+
+Learning Concept :
+1. Left Join : Consider All Rows From Left And Only Matching Rows From Right only.  
