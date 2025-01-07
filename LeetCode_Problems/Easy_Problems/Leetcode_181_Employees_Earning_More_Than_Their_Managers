@@ -1,0 +1,20 @@
+Qstn : Write a solution to find the employees who earn more than their managers.
+	   Return the result table in any order.
+	   The result format is in the following example.
+
+Query : SELECT E2.name as Employee FROM Employee as E1 INNER JOIN Employee E2 ON E1.id = E2.managerId And E2.salary > E1.salary 
+
+Reason : 
+-> I want Those Employee who's Salaray is greater then their manager id.
+-> In table each Employee has ManagerId set or don't have a manager
+-> So, I can Comapre the Salary of Manager and Employee Using ,Id and ManagerId .
+
+Explanation : 
+1. "SELF JOIN" Bcoz We have only one table 
+2. Each Row contain the employee id and The ManagerID Assign to it,
+3. This way i can compare the Salary between an employee and Manager.
+
+
+Learning Concept :
+1. SELF Join : Joining the table itslef  
+2. How To combine same Table.
