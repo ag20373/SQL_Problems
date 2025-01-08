@@ -1,0 +1,22 @@
+// GET Queires
+1. How To Get Data 
+-> SELECT * FROM tbl_Memeber .
+	This Query will Get All The Data Present In Table
+
+2. How To Get Filtered Data
+-> SELECT * FROM tableName WHERE ColumnName = Value;
+	This Query Will Get Only That Data Whose ColumnName = Value.
+
+3. How To Get Data With Multiple Filters
+-> SELECT * FROM tableName WHERE ColumnName1 = Value AND ColumnName2 = Value .... AND ColumnName3 = Value
+
+4. How To Get Data With Multiple Values In Single Column 
+-> SELECT * FROM tbl_Members WHERE Score IN (20 ,30,40)
+	This Query Will Get All Those Records Whose Column Score have Value 20 ,30 ,40
+
+-> SELECT * FROM tbl_Members WHERE Score NOT IN (20 ,30,40)
+	This Query Will Get All Those Records Whose Column Score Value is Not 20 ,30 ,40
+
+// DELETE Queries
+
+// UPDATE Queries
