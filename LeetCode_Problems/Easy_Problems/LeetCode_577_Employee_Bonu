@@ -1,0 +1,13 @@
+Problem : Find All the Employess with Bonus < 1000.
+
+Instruction :
+		1. Given two Table Employee and Bonus
+		2. Bonus has column emp_id(forign key) to Employee table column empl_id( primary column) and bonus represnt the employees who received bonus.
+
+Query : SELECT name , bonus FROM Employee AS E1 LEFT JOIN Bonus AS B1 
+		ON E1.empId = B1.empId WHERE bonus < 1000 OR Bonus IS null
+
+Explanation : 
+		1. We Need to find all the employee with bonus < 1000, mean also those employees who did not get bonus at all.
+		2. USing Left Join to get all the details of all the employes with respective bonus
+		3. Then using Where Condition to filter out the employees with Zero or <  Bonus.

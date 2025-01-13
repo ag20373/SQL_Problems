@@ -1,4 +1,5 @@
 // GET Queires
+
 1. How To Get Data 
 -> SELECT * FROM tbl_Memeber .
 	This Query will Get All The Data Present In Table
@@ -18,5 +19,14 @@
 	This Query Will Get All Those Records Whose Column Score Value is Not 20 ,30 ,40
 
 // DELETE Queries
+
+1. How To Delete All Records
+-> DELETE FROM tableName 
+
+2. How To Delete Specific Records
+-> DELETE FROM tableName WHERE Column = Value
+
+3. How To Delete Multiple Records
+-> DELETE FROM tableName WHERE Column IN(Value1, Value2, .., ValueN)
 
 // UPDATE Queries

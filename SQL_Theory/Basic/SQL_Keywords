@@ -1,0 +1,32 @@
+1. PARTITION BY: Divides the result set into groups (partitions) based on one or more columns.
+                 Works only with window functions(ROW_NUMBER()).
+
+Example : 
+SELECT id, email,
+               ROW_NUMBER() OVER (PARTITION BY email ORDER BY id) AS rn
+        FROM Person
+
+    ID  Email  rn
+    1   A      1
+    2   A      2
+    3   A      3
+    4   B      1
+    5   B      2
+    6   C      1
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+2. GROUP BY : Aggregates data, collapsing rows into one per group.
+              Used in aggregate queries (COUNT, SUM, etc.).
+              Use GROUP BY when you want to aggregate data and reduce the number of rows in the result.
+   Example : SELECT email as Email FROM Person GROUP BY email HAVING COUNT(email) > 1
+   ID  Email            Email
+   1     A                A 
+   2     B     ==>   
+   3     A
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+3. ORDER BY
+
+4. HAVING

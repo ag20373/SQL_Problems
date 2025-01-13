@@ -1,0 +1,26 @@
+Problem : Find the Played_ID and Event Date ,when he First Logged in To Play Games. 
+
+Instruction :
+		1. Given a table with Player_id , device_id ,EventDate , GamesPlayed
+		2. player_id and EventDate Combine as Primary Key.
+		3. Table Represnt When player logged in date, and how many games played and from which device id.
+
+Query1 : GROUP BY 
+		
+		SELECT player_id , MIN(event_date) as first_login 
+		FROM Activity GROUP BY player_id 
+
+Explanation : 
+		1. In Problem we are Suppose to find, Player first Occurence Date when he logged in to play the games.
+		2. So, As per Table a player can logged in multiple Different Date .
+		3. So We "GROUP BY" all the records to player_id , then we used "MIN()" function on event to get the minimum date from each Grouped Reocrds.
+
+Query2 : Using Window Function
+
+		SELECT player_id ,event_date AS first_login FROM 
+		(SELECT * , ROW_NUMBER() OVER (PARTITION BY player_id ORDER BY event_date) AS rnk FROM  Activity) AS cte 
+		WHERE rnk = 1
+
+Explanation : 
+			1. Here in "cte" I used a window function to created a rank for Original  based on player_id order by event_date
+			2. Using this cte To get my output whose rank = 1 ;
