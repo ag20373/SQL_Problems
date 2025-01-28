@@ -1,0 +1,14 @@
+Problem : Write a solution to find all the classes that have atleast five students in it.
+
+Data : 
+        1. Given a table with two columns [student , class]
+        2. [student , class] combine together to make it a primary key.
+
+Query : SELECT class FROM Courses GROUP BY class HAVING COUNT(class) >= 5
+
+Explanation :
+        1. We are suppose to find a class in which atleast  then 5 students have taken participate.
+        2. [Student , class] combination make sure each we can get only one entry of student in class.
+        eg : [A , Maths] ,we cannt have two records of this
+        3. So, we run grouped the rocrds based on class and display those whose count >= 5. 
+            
