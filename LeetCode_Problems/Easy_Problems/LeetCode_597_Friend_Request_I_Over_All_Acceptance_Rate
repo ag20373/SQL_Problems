@@ -1,0 +1,20 @@
+Problem  : Find the Overall Acceptance rate of requests, Which is the number of acceptance divided by the number of requests. Return the answer rounded to 2 decimal places,
+
+Data :  
+    1. Given a Table FriendRequest  with Sender_ID , Sedn_To_Id And Request Date. Can have Duplicates.
+    2. Given a Table With requestAccepted  may contain duplicates, represed the date Request is accepted.
+    3. Acceptance Rate is (No of Unique Request Accpted/ Total Number Of Unique Request Sended)
+
+Query : 
+        1. @Value = IFNULL(
+                            (SELECT COUNT(DISTINCT requester_id, accepter_id) FROM requestAccepted)/
+                            (SELECT COUNT(DISTINCT sender_id,send_to_id)FROM FriendRequest),0 )
+        2. SELECT ROUND(@Value,2) AS accept_rate;   
+
+Explanation :
+        1. We need to find out acceptance rate of Friend request , means how many requests have accepted.
+        2. Both table can take Duplicate value means, a person can send request two or accept two time from same person.
+        3. So We Find the Acceptance Rate Using The Following Formula : -
+            (No of Unique Req Accpted / No Of Unique Req Generated.)
+        4. IFNULL(Condition,0) -> Will Dsiplay 0 ,if value come out to be null
+        5. ROUND(Value,2) ->  Round The Result to 2 decimal.

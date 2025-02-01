@@ -19,3 +19,11 @@ Example : Column1 Column2 ... columnN ROW_Number()
 			 "Day" Means Conpare Date,
 			 "Month" Means Compare Month,
 			 "Year" Means comapre Year.
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+4. IFNULL(Condition , 0) :- Will get us Condition if Not Null else 0.
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+5. ROUND(Value , 2) :- Will Round the Value to 2 decimal.
