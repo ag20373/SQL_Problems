@@ -1,4 +1,5 @@
-1.  ROW_Number() : Assigns a unique, sequential number to each row within a partition of a result set. The numbering starts at 1 and increases by 1 for each row in the specified order.
+1.  ROW_Number() : Assigns a unique, sequential number to each row within a partition of a result set. 
+The numbering starts at 1 and increases by 1 for each row in the specified order.
 
 Example : Column1 Column2 ... columnN ROW_Number()
 			A		A			A		1
@@ -27,3 +28,12 @@ Example : Column1 Column2 ... columnN ROW_Number()
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 5. ROUND(Value , 2) :- Will Round the Value to 2 decimal.
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+6. ISNULL(M.Name,'No Manager') :- This function will return No Manager ,if we get null in columnN
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+7. COALESCE(FirstName, MiddleName, LastName ,'No Value') AS Name : This function will Return the First Non Null Value.
+																    FirstName -> MiddleName -> LastName -> No Value

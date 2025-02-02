@@ -17,4 +17,4 @@ SELECT e1.Name as Employee , e2.Name as Manager
 FROM tblEmployee e1 LEFT JOIN tblEmployee e2 
 ON e1.ManagerID = e2.EmployeeID 
 
-If you replace LEFT JOIN with INNER JOIN, you will not get TODD's record.
+**If you replace LEFT JOIN with INNER JOIN, you will not get TODD's record.**

@@ -1,0 +1,79 @@
+Q : What is Stored Procedure ?
+Ans : A stored procedure is group of T-SQL (Transact SQL) statements. If you have a situation, where you write the same query over and over again, you can save that specific query as a stored procedure and call it just by it's name.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q : How to Create a Stored Procedure without Parameter ?
+Ans : Consider a Table 
+
+![alt text](./Images/image_10.png)
+
+-> Creating a Stored Procedure Without Paramaeters.
+
+CREATE PROCEDURE spGetEmployees
+AS 
+BEGIN
+    SELECT Name , Gender FROM tblEmployee
+END
+
+-> To Execute
+EXEC spGetEmployees
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q : How to Create a Stored Procedure with Parameter ?
+Ans : 
+-> Creating a Stored Procedure With Parameters.
+
+CREATE PROCEDURE spGetEmployeeByGenderAndDepartment
+@Gender nvarchar(50),
+@DepartmentId int
+
+AS
+BEGIN
+    SELECT Name, Gender FROM tblEmployee WHERE Gender = @Gender AND DepartmentId = @DepartmentId
+END
+
+-> How To Exceute 
+EXECUTE spGetEmployeesByGenderAndDepartment 'Male', 1
+
+Note : The Order Should be same as How Parameters are defined.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+-> To change the stored procedure, use ALTER PROCEDURE statement:
+
+Alter Procedure spGetEmployeesByGenderAndDepartment 
+@Gender nvarchar(50),
+@DepartmentId int
+as
+Begin
+  Select Name, Gender from tblEmployee Where Gender = @Gender and DepartmentId = @DepartmentId order by Name
+End
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+-> To View The Text Of Strored PRocedure 
+
+sp_helptext 'SPName'
+This Will Display the Text of Stored Procdure
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+-> Excrypt the Text OF SP
+
+Alter Procedure spGetEmployeesByGenderAndDepartment 
+@Gender nvarchar(50),
+@DepartmentId int
+WITH ENCRYPTION
+as
+Begin
+  Select Name, Gender from tblEmployee Where Gender = @Gender and DepartmentId = @DepartmentId
+End
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+-> Delete Stroed PRocedure
+DROP PROC 'SPName' or DROP PROCEDURE 'SPName'
