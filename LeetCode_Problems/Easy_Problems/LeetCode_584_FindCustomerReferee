@@ -1,9 +1,0 @@
-Problem : Find All the Employess name whose refree_id is not 2.
-
-Instruction :
-		1. Given Table Customer
-		2. Table has Customer id, name and refree_id
-
-Query : SELECT name FROM Customer WHERE referee_id != 2 OR referee_id IS NULL
-
-Explanation : We wan tall those customer whose referee_id is not 2 , also those not assigned any refree_id
