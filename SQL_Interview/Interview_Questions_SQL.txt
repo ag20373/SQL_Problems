@@ -1,0 +1,30 @@
+Q1 : What are Aggregate Functions ?
+Ans : Count() , Sum() ,Avg() ,Min() ,Max()
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q2 : What is Group By?
+Ans : Group By clause is  used to group a selected set of rows into a summary rows by the values of one or more columns or expressions.It is always used in conjunction with one or more aggregate functions.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q3 : What is HAVING and Difference with WHERE ?
+Ans :   
+    1. WHERE clause can be used with - Select, Insert, and Update    statements, where as HAVING clause can only be used with the Select statement.
+    
+    2. WHERE filters rows before aggregation (GROUPING), where as, HAVING filters groups, after the aggregations are performed.
+    
+    3. Aggregate functions cannot be used in the WHERE clause, unless it is in a sub query contained in a HAVING clause, whereas, aggregate functions can be used in Having clause.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q4 : Different SQL Joins 
+Ans : 
+1. Cross Join : Returns Cartesian product of the table involves in the Join.
+2. Inner Join : Returns Only MAtching rows. non matching rows are eliminated
+3. Left Join : Returns all the matching rows + non matching rows from left table
+4. Right Join : Returns all the matching rows  + non matching rows from the right table.
+5. Full Join : Returns all rows from both tables , including the non matching rows.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

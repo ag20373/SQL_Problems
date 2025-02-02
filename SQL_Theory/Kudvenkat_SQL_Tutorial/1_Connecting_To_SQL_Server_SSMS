@@ -1,0 +1,26 @@
+In This Session 
+    1. Connecting to SQL Server Using SSMS
+    2. What is SQL Server Management Studio
+    3. Different authentication methods used to connect to SQL Server.
+
+/////////////////////////////////////////////////////////////////////////
+
+1. Connecting to SQL Server Using SSMS
+    Server Type : Database Engine
+    Server Name : (local) or 127.0.0.1
+    Authentication : Windows or SQL Server
+
+    If SQL Server Authentication 
+        Login
+        Password
+
+/////////////////////////////////////////////////////////////////////////
+
+2. What is SQL Server Management Studio
+    is the **client tool** that can be used to **write and execute SQL queries**. It is not a Server.
+
+/////////////////////////////////////////////////////////////////////////
+
+3. Different authentication methods used to connect to SQL Server.
+    Windows Authentication : dont have to Authenticate anything
+    SQL Server Authentication.

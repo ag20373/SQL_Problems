@@ -1,0 +1,20 @@
+In this video we will learn about
+1. Self Join - Joining a table with itself
+2. Self Join is not a different type of join. It can be classified as Inner Self Join, Outer Self Join (Left, Right and Full), or Cross Self Join.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Have you ever thought of a need to join a table with itself. Consider tblEmployees table shown below.
+
+![alt text](./Images/image-1.png)
+
+Write a query which gives the following result.
+
+![alt text](./Images/image-2.png)
+
+Query : 
+SELECT e1.Name as Employee , e2.Name as Manager 
+FROM tblEmployee e1 LEFT JOIN tblEmployee e2 
+ON e1.ManagerID = e2.EmployeeID 
+
+If you replace LEFT JOIN with INNER JOIN, you will not get TODD's record.

@@ -1,0 +1,42 @@
+Aim  Of this Session 
+    Create tblPerson and tblGender and Establish Primary Key and Foreign Key Constraints. 
+
+/////////////////////////////////////////////////////////////////////////
+
+Q : Create tblPerson Graphically Using SQL Management System. 
+    1. Right Click on tables Folder in Object Explorer Window
+    2. Select New tables
+    3. Fill Column Name, Data Type , and Aloow Nulls.
+
+/////////////////////////////////////////////////////////////////////////
+
+Q : Creating Table Using Query :
+Query : CREATE TABLE tblGender (ID int Not Null Primary Key , Gender nvarchar(50))
+
+/////////////////////////////////////////////////////////////////////////
+
+Q : Graphically Add a Foreign Key reference.
+    1. Right Click in table and select Design
+    2. Select Column and Select Relationships
+    3. In the Foreign key relationships window, click Add Button.
+    4. Now expand, in Tables and Column Specification row, by clicking the, + sign
+    5. Click on the elipses button, that is present in Tables and Column Specification row
+    6. From the Primary Key Table, dropdownlist, select tblGender
+    7. Click on the row below, and select ID column
+    8. From the column on the right hand side, select GenderId
+    9. Click OK and then click close.
+    0. Finally save the table.
+
+/////////////////////////////////////////////////////////////////////////
+
+Q : Adding Foreign Key Using Query 
+Query : ALTER TABLE tblPerson ADD CONSTRAINT tblPerson_GenderId_FK FOREIGN KEY (GenderId) REFERENCES tblGender(ID)
+
+General Query : ALTER TABLE ForeignKeyTableName ADD CONSTRAINT ForeignKeyTable_ForiegnKeyColumn_FK FOREIGN KEY (ForeignKeyColumn) REFERENCES PrimaryKeyTable (PrimaryKeyColumn)
+
+/////////////////////////////////////////////////////////////////////////
+
+Q : What is Foreign Keys?
+    -> Foreign Keys are used to enforce Database integrity.
+    -> The Foreign Key Constraints prevents invalid data from being inserted into the foreign key column.
+    -> The values that you enter into the foreign key column, has to be one of the values contained in the table it points to.
