@@ -60,3 +60,15 @@ Ans : Return Status Value               Output Parameters
       Only Integer Datatype             Any Datatype
       Only  One Value                   More then One value
       USe to convey Success or Faliure  use to return like name,count etc
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q10 : Advantages of Stored Procedures?
+Ans : 
+1. Execution Plan retention and Reusability 
+2. Reduce network Traffic 
+3. Code Reusability and Better Maintainability
+4. Better security
+5. Avoids SQL Injection Attacks.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
