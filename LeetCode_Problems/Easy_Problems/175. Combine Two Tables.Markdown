@@ -2,8 +2,8 @@ Problem : Write a solution to report the first name , last name ,city ,and state
 
 Data : 
         1. Given two table Person and Address
-        2. Person conatin information regarding Person name 
-        3. Address table contain information regarding Where that Person live
+        2. **Person** conatin information regarding Person name 
+        3. **Address** table contain information regarding Where that Person live
         4. There is no foreign key in address means, table can contain Extra address of user not present in  the Person table.
 
 Query :  SELECT firstName , lastName , city , state 
