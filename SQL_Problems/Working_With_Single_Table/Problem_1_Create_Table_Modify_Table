@@ -1,0 +1,58 @@
+-- 1 . Creating a Table , IF not Exisit.
+
+    Query : --Checking If Table Already Exist.
+            IF NOT EXIST (SELECT * FROM INFORMATION_SCHEMA.TABLES 
+            WHERE TABLE_NAME = 'tblData')
+            BEGIN
+                --Creating table 
+                CREATE TABLE tblData
+                (
+                    MemberCode VARCHAR(10) NOT NULL,
+                    ScripCode INT NOT NULL ,
+                    Exchange INT NOT NULL CHECK(Exchange IN (2 ,3 ,5)),
+                    ProductCode INT NOT NULL CHECK(ProductCode IN (1 ,2 ,3 ,16)),
+                    ScripName VARCHAR(10),
+                );
+
+                PRINT 'Table Created'; 
+            END
+
+            ELSE
+            BEGIN 
+                PRINT 'Table Exist Already'; 
+            END
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- 2 . Adding Two More Columns One is Qty  and Second is Record inseted Time 
+    Query : 
+            -- Checking if the column 'Qty' already exisits
+            IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tblData' AND COLUMN_NAME = 'QTY')
+            BEGIN 
+                ALTER TABLE tblData 
+                ADD Qty BIGINT CHECK (Qty <= 50000000)
+
+                PRINT 'Column Qty added successfully.';
+            END
+            ELSE
+            BEGIN
+                PRINT 'Column Qty already exists.';
+            END;
+
+            -- Checking if the column 'RecordInsertedTime' already exisits
+            IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tblData' AND COLUMN_NAME = 'RecordInsertedTime')
+            BEGIN 
+                ALTER TABLE tblData 
+                ADD RecordInsertedTime DATETIME DEFAULT GETDATE();
+
+                PRINT 'Column Qty added successfully.';
+            END
+            ELSE
+            BEGIN
+                PRINT 'Column Qty already exists.';
+            END;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        
